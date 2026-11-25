@@ -1,0 +1,6 @@
+{
+  "name": "Personal Developer Portfolio",
+  "description": "Personal developer portfolio showcasing Computer Science Engineering projects in system analysis, AI workflow automation, and personal memory intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #060913;
+    color: #f1f5f9;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Subtle dark-navy atmospheric backdrop and hairline glass surfaces */
+.bg-mesh-dark {
+  background-color: #060913;
+  background-image:
+    radial-gradient(60% 45% at 15% 10%, rgba(56, 189, 248, 0.09) 0%, transparent 70%),
+    radial-gradient(50% 40% at 85% 18%, rgba(139, 92, 246, 0.1) 0%, transparent 72%),
+    radial-gradient(55% 45% at 50% 85%, rgba(37, 99, 235, 0.07) 0%, transparent 75%);
+}
+
+.glass-surface {
+  background: rgba(13, 19, 36, 0.68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.glass-surface-hover {
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-surface-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 20px 44px -18px rgba(37, 99, 235, 0.25);
+}
+
+.accent-gradient-text {
+  background: linear-gradient(120deg, #38bdf8 0%, #60a5fa 45%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-gradient-btn {
+  background: linear-gradient(120deg, #2563eb 0%, #7c3aed 60%, #0891b2 100%);
+  background-size: 160% 160%;
+  transition:
+    background-position 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accent-gradient-btn:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 10px 28px -8px rgba(56, 189, 248, 0.45);
+}
+
+.accent-gradient-btn:active {
+  transform: translateY(1px);
+}
